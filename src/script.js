@@ -1,10 +1,10 @@
 // Initializes service worker with file system access and navigates to project path
-async function initialize(path) {
+async function initialize(fs) {
 	const serviceWorker = await navigator.serviceWorker.register("service_worker.js");
 	await navigator.serviceWorker.ready;
 	console.log("Service worker ready");
-	
-	serviceWorker.active.postMessage(await window.showDirectoryPicker());
+
+	serviceWorker.active.postMessage(await fs);
 	await new Promise((resolve) => navigator.serviceWorker.addEventListener("message", resolve, { once: true }));
 	console.log("Service worker initialized");
 

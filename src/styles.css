@@ -7,19 +7,36 @@ body {
 }
 
 button {
-	display: inline-block;
-	margin-top: 33vh;
+	display: block;
+	margin: 33vh auto 1em;
 	font-size: 2em;
 	font-family: sans-serif;
 	padding: 1em;
 	border-radius: 1em;
 	background: #eee;
+	border: 2px solid black;
 }
 
-button:hover {
+label:hover,button:enabled:hover {
 	background: #ccc;
 }
 
-button:active {
+label:active,button:enabled:active {
+	color: white;
 	background: #aaa;
+}
+
+label {
+	display: inline-block;
+	font-size: 2em;
+	font-family: sans-serif;
+	padding: 1em;
+	border-radius: 1em;
+	background: #eee;
+	border: 2px solid black;
+	box-sizing: border-box;
+}
+
+input {
+	display: none;
 }

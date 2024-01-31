@@ -1,10 +1,18 @@
 // File system API reference received from initializer
 let fs;
 
+// Mocks FileSystemDirectoryHandler for FileList
+function getFileHandleWrapper(path) {
+	return { getFile: () => Array.prototype.find.call(this, (file) => file.name === path) };
+}
+
 // Hands over file system access from root to service worker
 addEventListener("message", function (event) {
 	console.log("Service worker initializing");
 	fs = event.data;
+	if (!fs.getFileHandle) {
+		fs.getFileHandle = getFileHandleWrapper;
+	}
 	event.source.postMessage("initialized");
 });
 

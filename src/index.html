@@ -7,6 +7,17 @@
 	<title>Select directory</title>
 </head>
 <body>
-	<button onclick="initialize('index.html')">Select directory</button>
+	<button onclick="initialize(window.showDirectoryPicker())">Select live directory</button>
+	<label>
+		Select directory
+		<input type="file" webkitdirectory directory onchange="initialize(this.files)">
+	</label>
+	<script>
+		if (!("showDirectoryPicker" in window)) {
+			const btn = document.querySelector("button");
+			btn.disabled = true;
+			btn.title = "showDirectoryPicker not supported";
+		}
+	</script>
 </body>
 </html>
