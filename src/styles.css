@@ -1,0 +1,25 @@
+html,body {
+	height: 100%;
+}
+
+body {
+	text-align: center;
+}
+
+button {
+	display: inline-block;
+	margin-top: 33%;
+	font-size: 2em;
+	font-family: sans-serif;
+	padding: 1em;
+	border-radius: 1em;
+	background: #eee;
+}
+
+button:hover {
+	background: #ccc;
+}
+
+button:active {
+	background: #aaa;
+}
