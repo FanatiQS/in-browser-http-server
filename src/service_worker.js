@@ -45,7 +45,6 @@ async function readFile(path) {
 // Intercepts requests to /project/* path with files from filesystem
 addEventListener("fetch", function (event) {
 	console.log("Service worker fetch request:", event.request.url);
-	console.log(location);
 	const match = new URL(event.request.url).pathname.match(/\/project\/(.*)/);
 	if (match == null) return;
 	event.respondWith(readFile(match[1] || "index.html"));
