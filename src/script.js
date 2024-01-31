@@ -8,5 +8,5 @@ async function initialize(path) {
 	await new Promise((resolve) => navigator.serviceWorker.addEventListener("message", resolve, { once: true }));
 	console.log("Service worker initialized");
 
-	location.replace(`./project/${path}`);
+	location.replace(`./project/`);
 }

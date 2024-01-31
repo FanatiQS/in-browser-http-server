@@ -48,5 +48,5 @@ addEventListener("fetch", function (event) {
 	console.log(location);
 	const match = new URL(event.request.url).pathname.match(/\/project\/(.*)/);
 	if (match == null) return;
-	event.respondWith(readFile(match[1]));
+	event.respondWith(readFile(match[1] || "index.html"));
 });
